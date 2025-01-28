@@ -7,8 +7,8 @@ import { authorizeAdmin } from "../middlewares/autorizeAdmin.js";
 const router = express.Router();
 
 router.route("/login").post(login)
-router.route('/users').get(isAuthenticated,authorizeAdmin,getAllUsers);
-router.route('/user/:id').get(isAuthenticated,authorizeAdmin,getUserById);
+router.route('/users').get(getAllUsers);
+router.route('/user/:id').get(getUserById);
 
 
 export default router;

@@ -7,12 +7,12 @@ const AdminDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
+  const URL = import.meta.env.VITE_APP_URL_BACKEND;
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3500/api/v1/admin/users",
+          `${URL}/api/v1/admin/users`,
           {
             headers: {
               "Content-Type": "application/json",

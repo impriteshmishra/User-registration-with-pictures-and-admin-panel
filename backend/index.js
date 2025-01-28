@@ -28,9 +28,10 @@ app.use(express.json());
 app.use(cookieparser());
 app.use(urlencoded({extended:true}));
 
+const URL = process.env.URL_FRONTEND
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: `${URL}`,
     credentials: true
 }));
 

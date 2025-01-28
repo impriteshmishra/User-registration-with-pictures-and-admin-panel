@@ -8,17 +8,17 @@ function Form() {
 
   const [images, setImages] = useState(null);
 
-
+  const URL = import.meta.env.VITE_APP_URL_BACKEND;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    console.log("Selected name:", e.target);
+    // console.log("Selected name:", e.target);
   };
 
   const handleFileChange = (e) => {
     setImages(e.target.files);
-    console.log("Selected Files:", e.target.files);
+    // console.log("Selected Files:", e.target.files);
   };
 
   const handleSubmit = async (e) => {
@@ -30,17 +30,17 @@ function Form() {
     data.append("username", formData.username);
     if (images) {
       for (let i = 0; i < images.length; i++) {
-        console.log("single image", images[i]);
+        // console.log("single image", images[i]);
 
         data.append("images", images[i]);
       }
     }
-    console.log("all image", images);
+    // console.log("all image", images);
 
-    console.log("formdata", data);
+    // console.log("formdata", data);
 
     try {
-      await axios.post("http://localhost:3500/api/v1/user/register", data, {
+      await axios.post(`${URL}/api/v1/user/register`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -55,7 +55,7 @@ function Form() {
      
       
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       setLoading(false);
       alert("Error during registration");
     }

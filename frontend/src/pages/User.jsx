@@ -8,23 +8,23 @@ const User = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate= useNavigate();
-  
+  const URL = import.meta.env.VITE_APP_URL_BACKEND;
   const handleNavigate = ()=>{
     navigate("/adminDashboard")
   }
 
   useEffect(() => {
     const fetchUsers = async () => {
-      console.log(id);
+      // console.log(id);
 
       try {
         const response = await axios.get(
-          `http://localhost:3500/api/v1/admin/user/${id}`,
+          `${URL}/api/v1/admin/user/${id}`,
           {
             withCredentials: true,
           }
         );
-        console.log(response);
+        // console.log(response);
 
         setUsers(response.data);
         setLoading(false);

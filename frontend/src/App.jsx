@@ -10,7 +10,8 @@ import User from "./pages/User";
 
 
 function App() {
- 
+  // console.log(import.meta.env.VITE_APP_URL_BACKEND);
+  
 
   return (
    <BrowserRouter>

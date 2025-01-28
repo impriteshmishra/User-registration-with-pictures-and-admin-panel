@@ -40,7 +40,7 @@ function Form() {
     console.log("formdata", data);
 
     try {
-      await axios.post("http://localhost:3500/api/v1/user/register", data, {
+      await axios.post("https://userdetailsregistered-viewbyadmin-backend.onrender.com/api/v1/user/register", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

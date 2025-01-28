@@ -30,7 +30,7 @@ app.use(urlencoded({extended:true}));
 
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://userdetailsregistered-viewbyadmin-aubk.onrender.com',
     credentials: true
 }));
 

@@ -19,7 +19,7 @@ const User = () => {
 
       try {
         const response = await axios.get(
-          `https://userdetailsregistered-viewbyadmin-backend.onrender.com/api/v1/admin/user/${id}`,
+          `http://localhost:3500/api/v1/admin/user/${id}`,
           {
             withCredentials: true,
           }

@@ -12,7 +12,7 @@ const AdminDashboard = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          "https://userdetailsregistered-viewbyadmin-backend.onrender.com/api/v1/admin/users",
+          "http://localhost:3500/api/v1/admin/users",
           {
             headers: {
               "Content-Type": "application/json",

@@ -10,12 +10,18 @@ export const login = async (req,res)=>{
     if(!email || !password){
       return res.status(400).json({message:"Email and password is required."})
     }
+    if(email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD){
+      return res.status(400).json({message:"Incorrect email or password."})
+    }
     if(email === ADMIN_EMAIL && password === ADMIN_PASSWORD){
       const token = jwt.sign({email},process.env.JWT_KEY, {expiresIn:'1h'});
-      return res.status(200).json({
+      console.log("token while login", token);
+      
+       return res.cookie('token',token, {httpOnly: true, sameSite:'strict', maxAge:3600000 }).json({
         message:"Admin login successfully",
-        token,
-      })
+        success:true,
+        token
+       })    
     }
 
   } catch (error) {

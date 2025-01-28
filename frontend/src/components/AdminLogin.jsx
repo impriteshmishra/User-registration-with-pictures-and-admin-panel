@@ -24,10 +24,15 @@ function AdminLogin() {
       const response = await axios.post("http://localhost:3500/api/v1/admin/login", {
         email,
         password,
+       },{
+        withCredentials:true,
        })
+       console.log(response.data);
+       
       alert(response.data.message);
       navigate("/adminDashboard")
     } catch (error) {
+      alert(error.response.data.message);
       console.log(error);
       
     }

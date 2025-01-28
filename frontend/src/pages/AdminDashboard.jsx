@@ -23,7 +23,7 @@ const AdminDashboard = () => {
         setUsers(response.data);
         setLoading(false);
       } catch (error) {
-        setError("Failed to fetch users");
+        setError(error.response.data.message);
         setLoading(false);
       }
     };

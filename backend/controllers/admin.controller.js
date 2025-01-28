@@ -17,7 +17,7 @@ export const login = async (req,res)=>{
       const token = jwt.sign({email},process.env.JWT_KEY, {expiresIn:'1h'});
       console.log("token while login", token);
       
-       return res.cookie('token',token, {httpOnly: true, sameSite:'strict', maxAge:3600000 }).json({
+       return res.cookie('token',token, {httpOnly: true, secure:true, sameSite:'strict', maxAge:3600000 }).json({
         message:"Admin login successfully",
         success:true,
         token

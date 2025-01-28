@@ -50,7 +50,7 @@ const User = () => {
       </div>
      
 
-      <div className="w-4xl mx-auto mt-8 p-4 bg-white shadow-lg rounded-lg">
+      <div className="w-4xl mx-auto mt-8 p-4 bg-white  rounded-lg">
         <h1 className="text-xl font-bold mb-6 text-center">User Details</h1>
         <div className="grid grid-cols-1 w-full  md:grid-cols-2 gap-6">
           <div className=" w-full p-4 rounded-lg ">

@@ -29,10 +29,19 @@ app.use(cookieparser());
 app.use(urlencoded({extended:true}));
 
 
-app.use(cors({
-    origin: 'https://userdetailsregistered-viewbyadmin-aubk.onrender.com',
-    credentials: true
-}));
+// app.use(cors({
+//     origin: 'https://userdetailsregistered-viewbyadmin-aubk.onrender.com',
+//     credentials: true
+// }));
+
+app.use(
+  cors({
+    origin: "https://userdetailsregistered-viewbyadmin-aubk.onrender.com",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
 //here api call
 app.use("/api/v1/user", userRoute);

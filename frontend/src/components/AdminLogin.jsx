@@ -21,7 +21,7 @@ function AdminLogin() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:3500/api/v1/admin/login", {
+      const response = await axios.post("https://userdetailsregistered-viewbyadmin-backend.onrender.com/api/v1/admin/login", {
         email,
         password,
        },{
